@@ -15,10 +15,19 @@
 
 ## 環境
 
-- 常開的 Linux VPS，已啟用 cron，Python 3.9 以上及系統時區資料。
+- 常開的 Linux VPS，已啟用 cron，Python 3.9 以上及系統時區資料；用 git clone 下載時也需安裝 Git。
 - 已安裝、登入 Claude Code 與 Codex CLI；兩邊必須使用你要喚醒的訂閱帳號。
 - Codex CLI 0.162.1 與 Claude Code 2.1.260 已實測；新版本應先試跑。這組 Claude npm 套件需要 Node.js 22 以上。
 - Python 不需要安裝額外套件。Windows 工作排程不在本版範圍。
+
+Ubuntu / Debian 缺少基礎工具時，可先執行：
+
+```bash
+sudo apt-get update
+sudo apt-get install -y git python3 cron
+```
+
+Node.js 請另備妥 22 以上版本；發行版預設套件可能較舊，先以 `node --version` 確認。
 
 已有 Node.js 22 以上時，可在自己的使用者目錄安裝已驗證的 CLI 版本：
 
