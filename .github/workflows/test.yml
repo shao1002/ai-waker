@@ -1,0 +1,24 @@
+name: Offline tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        python: ['3.9', '3.12']
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify shell syntax
+        run: bash -n setup.sh scripts/wake.sh
+      - name: Run offline tests (no login or model requests)
+        run: python -m unittest discover -s scripts -p 'test_*.py' -v

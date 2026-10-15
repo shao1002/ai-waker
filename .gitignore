@@ -1,0 +1,8 @@
+config.local.json
+logs/
+work/
+backups/
+__pycache__/
+.env
+*.log
+*.jsonl

@@ -1,0 +1,9 @@
+{
+  "timezone": "Asia/Taipei",
+  "start_time": "08:00",
+  "runs_per_day": 4,
+  "interval_minutes": 301,
+  "claude_model": "haiku",
+  "codex_model": "",
+  "timeout_seconds": 180
+}
